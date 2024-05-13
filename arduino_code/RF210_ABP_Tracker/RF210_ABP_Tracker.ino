@@ -8,7 +8,7 @@ HardwareSerial mySerial1(1);
 int rxPin = 20;
 int txPin = 21;
 
-int period = 60; // period to send LoRaWAN packet
+int period = 30; // period to send LoRaWAN packet
 int rx_delay = 0;
 int8_t DC=0;
 
