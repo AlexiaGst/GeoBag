@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GeoBag</title>
+        <meta charset="utf-8" />
+		<style>{{{payload.style}}}</style>
+		<script>
+			var i=0
+			var url1 = "http://52.143.131.49:3000/d-solo/edjp374t3m9dsf/geobag?orgId=1&refresh=10s&from=1714369747237&to=1714391347237&panelId=1";
+			var url2="http://52.143.131.49:3000/d-solo/fdlzox050c9ogf/gateways?orgId=1&from=1716518373907&to=1716539973907&panelId=1";
+			btn.addEventListener("click", updateBtn);
+			
+			function updateBtn() {
+				if (i % 2 === 1) {
+					document.querySelector("iframe#framemap").setAttribute("src",url1);
+				}
+				else{
+					document.querySelector("iframe#framemap").setAttribute("src",url2);
+				}
+				i++
+			}
 
+			function alarme() {
+				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div class="Banniere">
+			<p>
+				<img src='/banniere.png' alt="Banniere" width="90%"/>
+			</p>
+		</div>
+		<br>
+		<h1>Voici la position actuelle de votre sac !</h1>
+		</br>
+		
+		<center>
+		<input id="checkbox_toggle" type="checkbox" class="check">
+		<div class="checkbox" onclick="updateBtn()">
+		  <label class="slide" for="checkbox_toggle">
+			<label class="toggle" for="checkbox_toggle"></label>
+			<label id='gps' class="text" for="checkbox_toggle">GPS</label>
+			<label id='gat' class="text" for="checkbox_toggle">Gateways</label>
+		  </label>
+		</div>
+		</center>
+		
+		<br>
+		
+		<div class="MAP">
+			<iframe id='framemap' src="http://52.143.131.49:3000/d-solo/edjp374t3m9dsf/geobag?orgId=1&refresh=10s&from=1714369747237&to=1714391347237&panelId=1" width="450" height="200" frameborder="0"></iframe>
+		</div>
+
+		
+		<p><center>Indication : Si en mode GATEWAYS la position est fixée sur les gateways de Liegeard et Valrose, cela signifie que le nombre de gateways détéctées n'est pas suffisant à la localisation</center></p>
+        
+		<div class="bouton1">
+			<a class="position" href="" target="_blank"><img id="pos" class="image" src="/copier.png" /></a>
+		</div>
+		
+		<div class="boutons2">
+            <a class="lien" href="https://www.pre-plainte-en-ligne.gouv.fr/" target="_blank"><img class="image" src="/signal.png" /></a>
+            <a class="lien" onclick="alarme()" ><img id="alarme" class="image" src="/Alarme.png" /></a>
+		</div>
+	</body>
+</html>
