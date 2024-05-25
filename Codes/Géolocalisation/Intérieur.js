@@ -136,13 +136,25 @@ if(nbr>1){
     return [msg1];
 
 }
-else{
+else if (nbr===1){
+    var nom='0';
+    var la;
+    var lo;
+    if (nom === "inspe-nice-liegeard") {  /* nom à définir*/
+        la="43.72272";
+        lo="7.25341";
+    }
+    else{
+        la = "43.7163678312044";
+        lo = "7.26855227658707";
+    }
     msg1.payload=[{
-        lats:"43.7163678312044",
-        lons:"7.26855227658707",
-        latitude:"43.72272",
-        longitude:"7.2534"
+        lats:la,
+        lons:lo,
     }];
 }
-
+else{
+    msg1.payload = [{
+    }];
+}
 return [msg1];
