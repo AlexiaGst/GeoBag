@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GeoBag-Aide</title>
+        <meta charset="utf-8" />
+		<style>{{{payload.style}}}</style>
+	</head>
+    <body>
+        <div class="Banniere">
+			<p>
+				<img src='/banniere.png' alt="Banniere" width="90%"/>
+			</p>
+		</div>
+        <br>
+        <h1><center>Indications d'utilisation</center></h1>
+        <ul>
+            <li><u>GPS:</u></li>
+            
+                <p>Le signal gps fonctionne en extérieur, les données renvoyées en intérieur ne sont donc pas toujours fiables. Dans ce cas utiliser le mode GATEWAYS.</p>
+                <p>La position n'est pas précise, prévoir un rayon d'une vingtaine de mètres autour du point.</p>
+                <p>La position mettre un temps avant de s'actualiser.</p>
+            
+            <li><u>GATEWAYS:</u></li>
+                <p>Le mode GATWAYS ne fonctionne qu'avec un minimum de 2 gateways captées.</p>
+                <p> Si le nombre de gateways est inférieur à 2, la localisation est sur la gateway captée.</p>
+        </ul>
+    <br>
+    <br>
+    <center><button onClick="Javascript:window.document.location.href='http://52.143.131.49:1880/geobag';">Retour au site</button></center>
+    </body>
+</html>
