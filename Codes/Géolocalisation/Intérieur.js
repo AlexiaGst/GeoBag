@@ -137,10 +137,10 @@ if(nbr>1){
 
 }
 else if (nbr===1){
-    var nom='0';
+    var nom=msg.payload.uplink_message.rx_metadata[i].gateway_ids.gateway_id;
     var la;
     var lo;
-    if (nom === "inspe-nice-liegeard") {  /* nom à définir*/
+    if (nom === "inspe-nice-liegeard") {
         la="43.72272";
         lo="7.25341";
     }
