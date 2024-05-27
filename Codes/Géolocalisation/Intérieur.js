@@ -1,6 +1,9 @@
 /* Important : Ce code est fait pour fonctionner uniquement à Valrose, il utilise donc les gateways Valrose et Liegeard.
 Il est possible de le faire fonctionner en dehors de valrose de façon plus globale en modifiant l'array loc_gat et en
 ajoutant quelques variables.
+
+Ici le point de référence pour les calculs est la gateway de Liegeard (car la gateway de valrose ne fonctionnait pas et 
+celle du fablab n'était pas toujours déployée)
 */
 
 
@@ -105,8 +108,8 @@ if(nbr>1 && "inspe-nice-liegeard"in noms){
 
     var azimut_min = 60.18;
 
-    var lat1 = degToRad(43.72273);
-    var lon1 = degToRad(7.25325);
+    var lat1 = degToRad(Number(loc_gat[0].lat));
+    var lon1 = degToRad(Number(loc_gat[0].lon));
     var r = 6371;
     var lats=[];
     var lons=[];
@@ -148,12 +151,12 @@ else if (nbr===1 || !("inspe-nice-liegeard" in noms)){
     var la;
     var lo;
     if (nom === "inspe-nice-liegeard") {
-        la="43.72272";
-        lo="7.25341";
+        la=Number(loc_gat[0].lat);
+        lo=Number(loc_gat[0].lon);
     }
     else{
-        la = "43.7163678312044";
-        lo = "7.26855227658707";
+        la =Number(loc_gat[1].lat);
+        lo =Number(loc_gat[1].lon);
     }
     msg1.payload=[{
         lats:la,
