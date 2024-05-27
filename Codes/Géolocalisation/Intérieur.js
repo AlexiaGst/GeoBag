@@ -1,3 +1,8 @@
+/* Important : Ce code est fait pour fonctionner uniquement à Valrose, il utilise donc les gateways Valrose et Liegeard.
+Il est possible de le faire fonctionner en dehors de valrose en modifiant l'array loc_gat et en ajoutant quelques variables.
+*/
+
+
 var loc_gat = [{nom:"inspe-nice-liegeard", lat: 43.72272,lon: 7.25341,alt: 197},{nom:'valrose',lat: 43.7163678312044, lon: 7.26855227658707,alt: 0}]
 var dist_gat=1.407;
 var nbr = msg.payload.uplink_message.rx_metadata.length;
