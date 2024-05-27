@@ -108,8 +108,8 @@ if(nbr>1 && "inspe-nice-liegeard"in noms){
 
     var azimut_min = 60.18;
 
-    var lat1 = degToRad(Number(loc_gat[0].lat));
-    var lon1 = degToRad(Number(loc_gat[0].lon));
+    var lat1 = degToRad(loc_gat[0].lat);
+    var lon1 = degToRad(loc_gat[0].lon);
     var r = 6371;
     var lats=[];
     var lons=[];
@@ -151,13 +151,15 @@ else if (nbr===1 || !("inspe-nice-liegeard" in noms)){
     var la;
     var lo;
     if (nom === "inspe-nice-liegeard") {
-        la=Number(loc_gat[0].lat);
-        lo=Number(loc_gat[0].lon);
+        la=loc_gat[0].lat;
+        lo=loc_gat[0].lon;
     }
     else{
-        la =Number(loc_gat[1].lat);
-        lo =Number(loc_gat[1].lon);
+        la =loc_gat[1].lat;
+        lo =loc_gat[1].lon;
     }
+    la=la.toString()
+    lo=lo.toString()
     msg1.payload=[{
         lats:la,
         lons:lo,
