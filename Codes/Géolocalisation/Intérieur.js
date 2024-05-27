@@ -1,5 +1,6 @@
 /* Important : Ce code est fait pour fonctionner uniquement à Valrose, il utilise donc les gateways Valrose et Liegeard.
-Il est possible de le faire fonctionner en dehors de valrose en modifiant l'array loc_gat et en ajoutant quelques variables.
+Il est possible de le faire fonctionner en dehors de valrose de façon plus globale en modifiant l'array loc_gat et en
+ajoutant quelques variables.
 */
 
 
