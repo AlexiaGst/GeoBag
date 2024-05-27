@@ -1,15 +1,15 @@
 var loc_gat = [{nom:"inspe-nice-liegeard", lat: 43.72272,lon: 7.25341,alt: 197},{nom:'valrose',lat: 43.7163678312044, lon: 7.26855227658707,alt: 0}]
-var dist_gat=1.407
+var dist_gat=1.407;
 var nbr = msg.payload.uplink_message.rx_metadata.length;
 
 var puiss = [];
+var noms=[];
 var msg1={};
 var pe=10**((14-30)/10); //puissance envoyée
 
 for (let i = 0; i < nbr; i++) {
-    puiss.push([msg.payload.uplink_message.rx_metadata[i].rssi,
-    msg.payload.uplink_message.rx_metadata[i].gateway_ids.gateway_id
-    ]);
+    puiss.push(msg.payload.uplink_message.rx_metadata[i].rssi);
+    noms.push(msg.payload.uplink_message.rx_metadata[i].gateway_ids.gateway_id);
 }
 
 
@@ -18,7 +18,7 @@ var d=[];
 
 
 for(let i=0; i<nbr; i++) {
-    var pr=10**((puiss[i][0]-30)/10); //puissance reçue 
+    var pr=10**((puiss[i]-30)/10); //puissance reçue 
     var c = 3*(10**8);
 
     var res=(c/(4*Math.PI*868000000))*((pe/pr)**(1/2));
@@ -42,7 +42,8 @@ function radToDeg(rad) {
     return rad / (Math.PI / 180);
 }
 
-if(nbr>1){
+if(nbr>1 && "inspe-nice-liegeard"in noms){
+
     var lie=d[0];
     var val=dist_gat-d[1];
     var y0=d[0]+d[1]+dist_gat;
@@ -136,8 +137,8 @@ if(nbr>1){
     return [msg1];
 
 }
-else if (nbr===1){
-    var nom=msg.payload.uplink_message.rx_metadata[i].gateway_ids.gateway_id;
+else if (nbr===1 || !("inspe-nice-liegeard" in noms)){
+    var nom=msg.payload.uplink_message.rx_metadata[0].gateway_ids.gateway_id;
     var la;
     var lo;
     if (nom === "inspe-nice-liegeard") {
