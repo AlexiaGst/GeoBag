@@ -12,4 +12,4 @@ Grâce au site web créé avec node-red, le sac est géolocalisable à tout mome
 - Double fond textile + renfort (probablement avec l’imprimante 3D)
 
 ## Rendu Final:
-Pour la présentation du projet, le sac n'a pas été monté mais les fonctionnalités restent les mêmes. Faute de temps et de difficulté, l'alarme n'a pas pu être mise en place. Autrement, toutes les autres fonctions ont été mises en place. Le sac est capable d'être localisé (avec une précision relative) tant en intérieur qu'en extérieur.
+Pour la présentation du projet, le sac n'a pas été monté mais les fonctionnalités restent les mêmes. Faute de temps, l'alarme n'a pas pu être mise en place. Autrement, toutes les autres fonctions ont été mises en place. Le sac est capable d'être localisé (avec une précision relative) tant en intérieur qu'en extérieur.
